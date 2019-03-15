@@ -231,7 +231,8 @@ div.row {
   .col-3 {
     flex: 0 0 68%;
   }
-  .col-4 {
+  .col-4,
+  .col-pie {
     flex: 0 0 92%;
   }
   [class*="sidebar"] {
@@ -249,4 +250,31 @@ div.row {
   .order-fourth {
     order: 4;
   }
+}
+
+/* Pie Gallery */
+.pie-gallery {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	display: flex;
+  flex-flow: row wrap;
+  justify-content: center; 
+}
+.pie-gallery > li {
+	flex: 0 0 100%;
+}
+.pie gallery > li > img {
+	width: 100%;
+}
+
+@media (min-width: 550px) {
+	.pie-gallery > li {
+		flex: 0 0 50%;
+	}
+}
+@media (min-width: 850px) { 
+	.pie-gallery > li {
+		flex: 0 0 33%;
+	}
 }

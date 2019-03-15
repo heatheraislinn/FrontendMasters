@@ -1,15 +1,16 @@
 /* Border box declaration 
 https://www.paulirish.com/2012/box-sizing-border-box-ftw/ */
 html {
-  box-sizing: border-box;
+  box-sizing: border-box; /* switches us from content box model to border box model where total width = margin + border + padding + content, rather than just content */
 }
 /* inherit border-box on all elements in the universe and before and after
  */
 *, 
 *:before, 
 *:after {
-  box-sizing: inherit;
+  box-sizing: inherit; /* border box is not inherited, so we have to specify we want it to be */
 }
+/* Box model: Content, padding, border, margin */
 
 body {
 	font-family: Arial, Geneva, sans-serif;
@@ -30,14 +31,66 @@ div img {
 	max-width: 225px; 
 }
 
-/* grid system -- mobile first! */
+/* grid system */
+.row::after {
+	content: "";
+	display: table;
+	clear: both;
+}
 
+[class*='col-'] {
+	width: 92%;
+	margin-left: 4%;
+	margin-right: 4%;
+	min-height: 1px;
+}
 
+.col-1-2,
+.col-1-4 {
+	background-color: #ffc;
+}
+.col-2 {
+	background-color: #fcf;
+}
+.col-3 {
+	background-color: #cff;
+}
+.col-4 {
+	background-color: #ccf;
+}
+
+/* Media queries */
 /* Mobile Landscape Screen Sizes */
 @media only screen and (min-width: 480px)  {
-
+	[class*='col-'] {
+		margin-right: 0;
+		min-height: 1px;
+		float: left;
+	}
+	.col-1-2,
+	.col-2 {
+		width: 44%;
+	}
+	.col-1-4,
+	.col-3,
+	.col-4 {
+		width: 92%;
+	}
 }
+
 /* Desktop screen Sizes */
 @media only screen and (min-width: 768px) {
-
+	.col-1-2,
+	.col-1-4 {
+		width: 20%;
+	}
+	.col-2 {
+		width: 44%;
+	}
+	.col-3 {
+		width: 68%;
+	}
+	.col-4 {
+		width: 92%;
+	}
 }
