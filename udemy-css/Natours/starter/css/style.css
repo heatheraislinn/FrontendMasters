@@ -111,6 +111,7 @@ body {
   display: inline-block;
   background-image: linear-gradient(to right, #7ed56f, #28b485);
   -webkit-background-clip: text;
+  background-clip: text;
   color: transparent;
   letter-spacing: 2px;
   transition: all .2s; }
@@ -431,6 +432,7 @@ body {
     display: inline-block;
     background-image: linear-gradient(to right, #7ed56f, #28b485);
     -webkit-background-clip: text;
+    background-clip: text;
     color: transparent; }
     @media only screen and (max-width: 56.25em) {
       .feature-box__icon {
@@ -579,7 +581,7 @@ body {
     width: 100%; }
     @media only screen and (max-width: 56.25em) {
       .popup__img {
-        display: inline-block;
+        /* display: inline-block; */
         width: 50%;
         float: left; } }
   .popup__text {
